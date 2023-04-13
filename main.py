@@ -6,9 +6,8 @@ import cv2
 import imutils
 import time
 
-from OpenCV.BallTracker import ballTracker
-
 from Course import Course
+from OpenCV.BallTracker import BallTracker, bballTracker
 
 # construct the argument parse and parse the arguments
 #ap = argparse.ArgumentParser()
@@ -17,4 +16,9 @@ from Course import Course
 #args = vars(ap.parse_args())
 
 course = Course()
-ballTracker(course)
+#ballTracker(course)
+LOWER = (0, 0, 150)
+UPPER = (180, 255, 255)
+ballTracker = BallTracker(course, LOWER, UPPER)
+ballTracker.loop()
+#bballTracker(course)
