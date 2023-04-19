@@ -13,12 +13,27 @@ class Robot:
 
         self.ev3 = EV3Brick()
 
+        self.x_pos = 0 # from origin
+        self.y_pos = 0 # from origin
+
         self.left_motor = Motor(left_motor_port)
         self.right_motor = Motor(right_motor_port)
         self.wheels = DriveBase(left_motor, right_motor, WHEEL_DIAMETER, AXLE_TRACK)
 
-    def move(self):
-        wheels.straight(1000)
+
+
+    def straight(self, distance):
+        self.wheels.straight(distance)
+
+    def turn(self, degrees)
+        self.wheels.turn(degrees)
 
     def beep(self):
         ev3.speaker.beep()
+
+robot = Robot(Port.D, Port.A)
+
+for i in range(10):
+    robot.straight(100)
+    robot.beep()
+    robot.turn(90)

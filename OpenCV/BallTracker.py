@@ -12,9 +12,9 @@ class BallTracker:
 		self.lower_color = lower_color
 		self.upper_color = upper_color
 		self.points = []
-		self.vs = cv2.VideoCapture("D:/Development/alturing/Robot/OpenCV/balls.mp4")
-		self.AMOUNT_OF_FRAMES = self.vs.get(cv2.CAP_PROP_FRAME_COUNT)
-		print(self.AMOUNT_OF_FRAMES)
+		self.vs = cv2.VideoCapture(1)
+		#self.AMOUNT_OF_FRAMES = self.vs.get(cv2.CAP_PROP_FRAME_COUNT)
+		#print(self.AMOUNT_OF_FRAMES)
 		# allow the camera or video file to warm up
 		time.sleep(2.0)
 
@@ -74,14 +74,15 @@ class BallTracker:
 			print("Ball " + str(i) + "(" + str(x) + ", " + str(y) + ")")
 
 	def loop(self):
-		self.__set_frame(10)
+		#self.__set_frame(10)
 		while True:
 			# grab the current frame
 			ret, frame = self.vs.read()
 			# handle the frame from VideoCapture or VideoStream
 			#frame = frame[1] if args.get("video", False) else frame
 			if ret is None: # end of video
-				self.vs.set(cv2.CAP_PROP_POS_FRAMES, 10)
+				break
+				#self.vs.set(cv2.CAP_PROP_POS_FRAMES, 10)
 
 			
 			if (frame is None):

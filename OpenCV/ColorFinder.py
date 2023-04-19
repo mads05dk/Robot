@@ -65,7 +65,7 @@ parser = argparse.ArgumentParser(description='Code for Thresholding Operations u
 parser.add_argument('--camera', help='Camera divide number.', default=0, type=int)
 args = parser.parse_args()
 #cap = cv.VideoCapture(args.camera, cv.CAP_DSHOW)
-cap = cv.VideoCapture("D:/Development/alturing/Robot/OpenCV/balls.mp4")
+cap = cv.VideoCapture(1)
 cv.namedWindow(window_capture_name)
 cv.namedWindow(window_detection_name)
 cv.createTrackbar(low_H_name, window_detection_name , low_H, max_value_H, on_low_H_thresh_trackbar)
