@@ -17,8 +17,11 @@ from OpenCV.BallTracker import BallTracker, bballTracker
 
 course = Course()
 #ballTracker(course)
-LOWER = (0, 0, 150)
-UPPER = (180, 255, 255)
+#LOWER = (0, 0, 150)
+#UPPER = (180, 255, 255)
+# DTU BALLS
+LOWER = (0, 0, 221)
+UPPER = (155, 82, 255)
 ballTracker = BallTracker(course, LOWER, UPPER)
 ballTracker.loop()
 #bballTracker(course)
